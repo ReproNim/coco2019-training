@@ -36,17 +36,17 @@
 
 # The Presentations
 ## Introduction - David Kennedy (UMass Medical) and JB Poline (McGill)
-[Link](https://github.com/ReproNim/ohbm2018-training/blob/master/Introduction/HandsOn_Motivation.pdf)
+[Link](https://github.com/ReproNim/sfn2018-training/blob/master/Introduction/HandsOn_Motivation.pdf)
 
 ## FAIR Data - BIDS datasets  - Jeffrey Grethe, UCSD
-[Link](https://github.com/ReproNim/ohbm2018-training/blob/master/section1/OHBM_FAIR_Training_Corrected.pdf).
+[Link](https://github.com/ReproNim/sfn2018-training/blob/master/section1/OHBM_FAIR_Training_Corrected.pdf).
 
 ## Computational basis  - Yaroslav Halchenko, Dartmouth College and Michael Hanke, Magdeburg
 
 
 ## Neuroimaging Workflows - Dorota Jarecka and Satrajit Ghosh, MIT
-- Containers [Link](http://www.reproducibleimaging.org/ohbm2018-training/presentations/containers/exercises/#1)
+- Containers [Link](http://www.reproducibleimaging.org/sfn2018-training/presentations/containers/exercises/#1)
 
 ## Statistics for reproducibility  - Celia Greenwood and Jean-Baptiste Poline, McGill
-- Basics [Link](https://github.com/ReproNim/ohbm2018-training/blob/master/section4/section41/basics2.pdf)
-- Positive Predictive Value (PPV) [Link](https://github.com/ReproNim/ohbm2018-training/blob/master/section4/section42/Positive-Predictive-Value.ipynb)
+- Basics [Link](https://github.com/ReproNim/sfn2018-training/blob/master/section4/section41/basics2.pdf)
+- Positive Predictive Value (PPV) [Link](https://github.com/ReproNim/sfn2018-training/blob/master/section4/section42/Positive-Predictive-Value.ipynb)
