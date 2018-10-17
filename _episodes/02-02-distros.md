@@ -273,8 +273,8 @@ works with a complete and annotated history of content changes.
 > > ## Solution
 > > I am sorry if you had to look in here ;-)
 > > ~~~
-> > % git clone https://github.com/ReproNim/ohbm2018-training
-> > Cloning into 'ohbm2018-training'...
+> > % git clone https://github.com/ReproNim/sfn2018-training
+> > Cloning into 'sfn2018-training'...
 > > remote: Counting objects: 194, done.
 > > remote: Compressing objects: 100% (46/46), done.
 > > remote: Total 194 (delta 31), reused 48 (delta 21), pack-reused 126
