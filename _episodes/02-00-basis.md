@@ -1,5 +1,5 @@
 ---
-title: "</a><b>Computational Basis</b><a>"
+title: "</a><b>Reproducibility Basics</b><a>"
 teaching: 0
 exercises: 0
 ---

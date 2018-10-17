@@ -16,7 +16,7 @@ repo: http://github.com/ReproNim/sfn2018-training
 root: "/sfn2018-training"
 
 # Contact email address.
-email: team@datalad.org
+email: info@repronim.org
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
@@ -37,7 +37,7 @@ rn_site: "https://repronim.github.io"
 rn_github: "https://github.com/repronim"
 
 # Start time in minutes (540 is 09:00 am)
-start_time: 615
+start_time: 540
 
 # Specify that things in the episodes collection should be output.
 collections:

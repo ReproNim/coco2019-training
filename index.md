@@ -3,7 +3,7 @@ layout: lesson
 ---
 
 These lectures and hands-on exercises are a part of the training curriculum from
-the OHBM 2018 training course ran by [ReproNim](http://www.reproducibleimaging.org)
+the SfN 2018 training course ran by [ReproNim](http://www.reproducibleimaging.org)
 (Reproducible Neuroimaging) Center.  Selected materials are taylored for
 this course and cover only some sections within the full-day, but otherwise really compressed, event schedule.
 Please visit [ReproNim: Teach](http://www.reproducibleimaging.org) for

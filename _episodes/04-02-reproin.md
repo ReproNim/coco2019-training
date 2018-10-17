@@ -1,7 +1,7 @@
 ---
 title: "ReproIn/DataLad: A complete portable and reproducible fMRI study from scratch"
-teaching: 5
-exercises: 25
+teaching: 25
+exercises: 30
 questions:
 - "How to implement a basic neuroimaging study with complete and unambiguous provenance tracking of all actions?"
 objectives:

@@ -1,7 +1,7 @@
 ---
 title: "Neuroimaging Workflows"
-teaching: 10
-exercises: 20
+teaching: 20
+exercises: 30
 questions:
 - "Principles of re-executable processing"
 objectives:
