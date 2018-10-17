@@ -6,7 +6,7 @@
 kind: "lesson"
 
 # Overall title for pages.
-title: "Computational basis and ReproIn/DataLad"
+title: "Hands on reproducible analysis of neuroimaging data: Nov. 2-3, UCSD"
 
 # Repository URL (without trailing slash).
 repo: http://github.com/ReproNim/sfn2018-training
