@@ -71,8 +71,8 @@ datalad install -d . -s ../bids inputs/rawdata
 datalad run-procedure setup_yoda_dataset
 
 # inject external code, such that its location is tracked
-datalad download-url -O code/events2ev3.sh https://raw.githubusercontent.com/ReproNim/ohbm2018-training/master/section23/scripts/events2ev3.sh
-datalad download-url -O code/ffa_design.fsf https://raw.githubusercontent.com/ReproNim/ohbm2018-training/master/section23/scripts/ffa_design.fsf
+datalad download-url -O code/events2ev3.sh https://raw.githubusercontent.com/ReproNim/sfn2018-training/master/section23/scripts/events2ev3.sh
+datalad download-url -O code/ffa_design.fsf https://raw.githubusercontent.com/ReproNim/sfn2018-training/master/section23/scripts/ffa_design.fsf
 
 
 # here we convert BIDS events.tsv into a format accessible to FSL
