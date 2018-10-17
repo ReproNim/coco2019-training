@@ -1,6 +1,6 @@
 ---
 title: "ReproEnv: Virtual machines/Containers, Neurodocker"
-teaching: 15
+teaching: 20
 exercises: 15
 questions:
 - "How to encapsulate complete computational environments into redistributable/reusable containers?"

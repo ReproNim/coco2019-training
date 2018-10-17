@@ -1,5 +1,5 @@
 ---
 title: "</a><b>Introduction</b><a>"
-teaching: 15
+teaching: 30
 exercises: 0
 ---

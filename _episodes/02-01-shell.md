@@ -1,6 +1,6 @@
 ---
 title: "Shell: Getting around the “black box”"
-teaching: 10
+teaching: 15
 exercises: 10
 questions:
 - "Why and how does using the command line/shell efficiently increase reproducibility of neuroimaging studies?"

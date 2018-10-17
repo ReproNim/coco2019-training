@@ -1,6 +1,6 @@
 ---
 title: "(Neuro)Debian/Git/GitAnnex/DataLad: Distributions and Version Control"
-teaching: 10
+teaching: 15
 exercises: 30
 questions:
 - "What are the best ways to obtain and track information about software, code, and data used or produced in the study?"

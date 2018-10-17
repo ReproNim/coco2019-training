@@ -37,7 +37,7 @@ rn_site: "https://repronim.github.io"
 rn_github: "https://github.com/repronim"
 
 # Start time in minutes (540 is 09:00 am)
-start_time: 540
+start_time: 510
 
 # Specify that things in the episodes collection should be output.
 collections:
