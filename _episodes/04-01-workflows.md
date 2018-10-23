@@ -1,7 +1,7 @@
 ---
 title: "Neuroimaging Workflows"
 teaching: 20
-exercises: 30
+exercises: 0
 questions:
 - "Principles of re-executable processing"
 objectives:
@@ -10,5 +10,3 @@ objectives:
 
 
 - [Presentation](../presentations/processing/)
-- [Exercise 1](http://www.reproducibleimaging.org/sfn2018-training/03-01-reproin/#a-reproducible-glm-demo-analysis)
-- [Exercise 2](../presentations/processing/#17)
