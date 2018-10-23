@@ -1,7 +1,7 @@
 ---
 title: "Rerunning the workflow with ReproZip"
-teaching: 10
-exercises: 10
+teaching: 5
+exercises: 15
 questions:
 - "How to re-execute workflow using ReproZip"
 objectives:
@@ -9,4 +9,4 @@ objectives:
 ---
 
 
-- [Presentation](../presentations/processing/#17)
+- [Exercise](../presentations/processing/#17)
