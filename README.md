@@ -1,17 +1,10 @@
-# Instructions
-## install virtual box
-## download the ova file
+# SFN 2018 Reproducibility Training Workshop
 
-# SFN 2018 Reproducibility Course Schedule
+You are in the gh-pages branch, which contains all sources for
+producing [website](http://www.reproducibleimaging.org/sfn2018-training/)
+for the event.  You can find main README.md in the [master branch](https://github.com/ReproNim/sfn2018-training/blob/master/README.md)
+of the same repository.
 
-## Stats components
-* sampling : do we get the same results with sampling 
-* [ permutation ? ]
-* p-values: what they do not tell you
-* p-hacking : vibration with sampling/QC: data selection, vibration with model, 
-* power ? 
-
-# Introductory session on DataLad for reproducible neuroimaging
 
 ## Acknowledgment
 
