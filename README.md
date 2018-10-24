@@ -2,7 +2,7 @@
 ## install virtual box
 ## download the ova file
 
-# OHBM 2018 Reproducibility Course Schedule
+# SFN 2018 Reproducibility Course Schedule
 
 ## Stats components
 * sampling : do we get the same results with sampling 
