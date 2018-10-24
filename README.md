@@ -35,18 +35,6 @@
 - if you are unable to install VirtualBox due to virtualization technology (VT-x) not being enabled on your system, [look here](https://docs-old.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html)
 
 # The Presentations
-## Introduction - David Kennedy (UMass Medical) and JB Poline (McGill)
-[Link](https://github.com/ReproNim/sfn2018-training/blob/master/Introduction/HandsOn_Motivation.pdf)
 
-## FAIR Data - BIDS datasets  - Jeffrey Grethe, UCSD
-[Link](https://github.com/ReproNim/sfn2018-training/blob/master/section1/OHBM_FAIR_Training_Corrected.pdf).
-
-## Computational basis  - Yaroslav Halchenko, Dartmouth College and Michael Hanke, Magdeburg
-
-
-## Neuroimaging Workflows - Dorota Jarecka and Satrajit Ghosh, MIT
-- Containers [Link](http://www.reproducibleimaging.org/sfn2018-training/presentations/containers/exercises/#1)
-
-## Statistics for reproducibility  - Celia Greenwood and Jean-Baptiste Poline, McGill
-- Basics [Link](https://github.com/ReproNim/sfn2018-training/blob/master/section4/section41/basics2.pdf)
-- Positive Predictive Value (PPV) [Link](https://github.com/ReproNim/sfn2018-training/blob/master/section4/section42/Positive-Predictive-Value.ipynb)
+All tutorials and slides are available from the http://repronim.org/sfn2018-training
+generated from sources within `gh-pages` branch of this repository.
