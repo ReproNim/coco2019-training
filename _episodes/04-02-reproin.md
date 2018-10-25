@@ -272,7 +272,10 @@ shub://ReproNim/ohbm2018-training:heudiconvn (a local copy is available at
 > > ~~~
 > > % # regular call
 > > % # datalad containers-add heudiconv --url shub://ReproNim/ohbm2018-training:heudiconvn
-> > % # BUT in the training VM do this to save on downloads
+> > % # BUT in the training VM to save on downloads use a local copy.
+> > % # But first tune up git annex configuration to allow to reference local
+> > % # files:
+> > % git config --global 'annex.security.allowed-url-schemes' 'http https file'
 > > % datalad containers-add heudiconv --url ~/images/heudiconv.simg \
 > >       --call-fmt 'singularity exec {img} {cmd}'
 > > % datalad containers-list
