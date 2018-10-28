@@ -206,6 +206,15 @@ paths.
 > ~~~
 > {: .bash}
 
+> You can start checking the commit history (running `git log`) to see
+> what information [DataLad] captures from the very beginning of new dataset.
+
+> ~~~
+> % git log
+> ~~~
+> {: .bash}
+
+
 > #### Advantages of Relative Path Specification
 >
 > In many cases, it does not matter whether one uses absolute vs relative paths,
@@ -270,15 +279,16 @@ shub://ReproNim/ohbm2018-training:heudiconvn (a local copy is available at
 >
 > > ## Solution
 > > ~~~
-> > % # regular call
-> > % # datalad containers-add heudiconv --url shub://ReproNim/ohbm2018-training:heudiconvn
-> > % # BUT in the training VM to save on downloads use a local copy.
+> > % # In the training, to save on downloads, we will use a local copy that is saved in ~/images.
 > > % # But first tune up git annex configuration to allow to reference local
 > > % # files:
 > > % git config --global 'annex.security.allowed-url-schemes' 'http https file'
 > > % datalad containers-add heudiconv --url ~/images/heudiconv.simg \
 > >       --call-fmt 'singularity exec {img} {cmd}'
 > > % datalad containers-list
+> > % # Additional comments, please do NOT run it during training:
+> > % # regular call that downloads image from Singularity Hub (instead of using a local copy):
+> > % # datalad containers-add heudiconv --url shub://ReproNim/ohbm2018-training:heudiconvn
 > > ~~~
 > > {: .bash}
 > {: .solution}
