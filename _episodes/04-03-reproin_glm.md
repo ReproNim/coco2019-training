@@ -9,7 +9,18 @@ objectives:
   reproducibility
 - carefully validated intermediate results (captured as a DataLad dataset) are
   a candidate for publication with minimal additional effort
-- the outcome of this demo is available as a demo DataLad dataset from [GitHub](https://github.com/myyoda/demo-dataset-glmanalysis)
+- the outcome of this demo is available as a demo DataLad dataset from
+[GitHub](https://github.com/myyoda/demo-dataset-glmanalysis)
+keypoints:
+- we can implement a complete imaging study using DataLad datasets to represent
+  units of data processing
+- each unit comprehensively captures all inputs and data processing leading up to
+  it
+- this comprehensive capture facilitates re-use of units, and enables computational
+  reproducibility
+- carefully validated intermediate results (captured as a DataLad dataset) are
+  a candidate for publication with minimal additional effort
+
 ---
 
 ## A Reproducible GLM Demo Analysis

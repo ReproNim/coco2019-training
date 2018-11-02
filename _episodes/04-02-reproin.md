@@ -7,6 +7,8 @@ questions:
 objectives:
 - "Conduct portable and reproducible analyses with ReproIn and DataLad from the ground up."
 keypoints:
+- it is possible and easy to create valid BIDS datasets straight from
+  scanner with little of planing upfront
 - we can implement a complete imaging study using DataLad datasets to represent
   units of data processing
 - each unit comprehensively captures all inputs and data processing leading up to
