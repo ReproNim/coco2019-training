@@ -176,7 +176,7 @@ layout: false
 --
 
  **Virtual Machines**
-  - emulate whole computer system (software+hardware)
+  - **emulate whole computer system (software+hardware)**
   - use *hypervisor* to share and manage hardware of the host, and execute the guest operating system
   - guest machines are completely isolated and have dedicated resources
 ---
@@ -187,7 +187,7 @@ layout: false
 
 
    **Docker containers**
-  - share the host system’s kernel with other containers
+  - **share the host system’s kernel with other containers**
   - each container gets its own isolated user space
   - only bins and libs are created from scratch
   - **containers are very lightweight and fast to start up**
@@ -209,13 +209,14 @@ There is no one solution that always works, your choice should depend on:
   - an open-source project
   - **it runs now on Mac OS X and Windows Pro** (you don't have to install VM!)
 --
+
   - **can escalate privileges - not supported by HPC centers admins**
 
 --
 
 - **Singularity:**
   - a container solution created for scientific application
-  - supports existing and traditional HPC resources
+  - **supports existing and traditional HPC resources**
   - a user inside a Singularity container is the same user as outside the container
 (so you can be a root only if you were root on the host system)
   - VM needed on OSX and Windows
