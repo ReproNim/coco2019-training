@@ -83,11 +83,7 @@ layout: false
 - Universal Install Script from xkcd: *The failures usually don’t hurt anything...*
  And usually all your old programs work...
 
-<img src="img/universal_install_script_2x.png" width="35%" />
-
-- Containers:
-  - isolate the environments
-  - you can do whatever you want and remove anytime
+<img src="img/universal_install_script_2x.png" width="40%" />
 
 ---
 ### <span style="color:purple"> Why do we need containers?</span>
@@ -212,9 +208,7 @@ There is no one solution that always works, your choice should depend on:
   - leading software container platform
   - an open-source project
   - **it runs now on Mac OS X and Windows Pro** (you don't have to install VM!)
-
 --
-
   - **can escalate privileges - not supported by HPC centers admins**
 
 --
