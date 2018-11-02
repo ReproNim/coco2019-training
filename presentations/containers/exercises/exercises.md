@@ -220,7 +220,8 @@ docker run my_fsl bet
 layout: false
 
 - installing a datalad repository and downloading one T1w file 
-(if you are using the ReproNim VM, you should use `section2` conda environment)
+
+(if you are using the ReproNim VM, you should use `section2` conda environment -- `source activate section2`)
 ```bash
 mkdir data
 cd data
@@ -228,6 +229,9 @@ datalad install -r ///workshops/nih-2017/ds000114
 datalad get ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
 cd ..
 ```
+
+---
+layout: false
 
 - mounting a local directory with data and running *bet* on the T1w file: 
 ```bash
@@ -241,8 +245,7 @@ ls -l
 ```
 --
 
-<img src="img/docker3.jpeg" width="85%" />
-
+<img src="img/docker3.jpeg" width="95%" />
 
 ---
 layout: false
