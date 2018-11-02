@@ -29,6 +29,7 @@ layout: false
 ---
 
 ### <span style="color:purple">Why do we need containers?</span>
+#### <span style="color:purple">Long term perspective</span>
 
 ### Science Reproducibility
 
@@ -45,6 +46,7 @@ layout: false
 
 ---
 ### <span style="color:purple"> Why do we need containers?</span>
+#### <span style="color:purple"> Short term perspective</span>
 
 ### Collaboration with your colleagues
 
@@ -59,6 +61,7 @@ layout: false
 
 ---
 ### <span style="color:purple"> Why do we need containers?</span>
+#### <span style="color:purple"> Short term perspective</span>
 
 ### Changing hardware
 
@@ -74,6 +77,7 @@ layout: false
 ---
 
 ###<span style="color:purple">Why do we need containers?</span>
+#### <span style="color:purple">Short term perspective</span>
 
 ### Freedom to experiment!
 - Universal Install Script from xkcd: *The failures usually don’t hurt anything...*
@@ -87,7 +91,7 @@ layout: false
 
 ---
 ### <span style="color:purple"> Why do we need containers?</span>
-
+#### <span style="color:purple"> Short term perspective</span>
 
 ### Using existing environments
 
@@ -207,8 +211,11 @@ There is no one solution that always works, your choice should depend on:
 - **Docker:**
   - leading software container platform
   - an open-source project
-  - it runs now on Mac OS X and Windows Pro (you don't have to install VM!)
-  - can escalate privileges - not supported by HPC centers admins
+  - **it runs now on Mac OS X and Windows Pro** (you don't have to install VM!)
+
+--
+
+  - **can escalate privileges - not supported by HPC centers admins**
 
 --
 
