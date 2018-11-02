@@ -69,11 +69,15 @@ order to the chaos. Anyone can develop their own ideas on how a dataset should
 be structured and implement these concepts in *dataset procedures* that can be
 executed using the [datalad run-procedure] command.
 
-Here we are going to adopt the YODA principles: a set of simple rules on how to
-structure analysis dataset. You can learn more about YODA at OHBM poster 2046
-(*YODA: YODA’s organigram on data analysis*). But here, the only relevant aspect
+We are going to adopt the YODA principles: a set of simple rules on how to
+structure analysis dataset(s) to facilitate their reuse and
+reproducibility of the results
+(see [OHBM 2018 YODA
+poster](https://github.com/myyoda/poster/blob/master/ohbm2018.pdf) for
+more information). Here, the only relevant aspects
 is that we want to keep all analysis scripts in the `code/` subdirectory of
-this dataset. We can get a readily configured dataset by running the YODA
+this dataset and later enhance it with full analysis environment
+images. We can get a readily configured dataset by running the YODA
 setup procedure:
 
 > ## Task: Run the `setup_yoda_dataset` procedure
@@ -93,9 +97,9 @@ Before we can fire up FSL for our GLM analysis, we need two pieces of custom
 code:
 
 1. a small script that can convert BIDS events.tsv files into the EV3 format that
-   FSL can understand, available at <https://raw.githubusercontent.com/myyoda/ohbm2018-training/master/section23/scripts/events2ev3.sh>
+   FSL can understand, available at <https://raw.githubusercontent.com/ReproNim/sfn2018/master/section23/scripts/events2ev3.sh>
 
-2. an FSL analysis configuration template script available at <https://raw.githubusercontent.com/myyoda/ohbm2018-training/master/section23/scripts/ffa_design.fsf>
+2. an FSL analysis configuration template script available at <https://raw.githubusercontent.com/ReproNim/sfn2018/master/section23/scripts/ffa_design.fsf>
 
 Any custom code needs to be tracked if we want to achieve a complete record of
 how an analysis was conducted. Hence we will store those scripts in our analysis
@@ -110,8 +114,8 @@ dataset.
 > > ## Solution
 > > ~~~
 > > % datalad download-url --path code \
-> >   https://raw.githubusercontent.com/myyoda/ohbm2018-training/master/section23/scripts/events2ev3.sh \
-> >   https://raw.githubusercontent.com/myyoda/ohbm2018-training/master/section23/scripts/ffa_design.fsf
+> >   https://raw.githubusercontent.com/ReproNim/sfn2018/master/section23/scripts/events2ev3.sh \
+> >   https://raw.githubusercontent.com/ReproNim/sfn2018/master/section23/scripts/ffa_design.fsf
 > > % git log
 > >
 > > ~~~
