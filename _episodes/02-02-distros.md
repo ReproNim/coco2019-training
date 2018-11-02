@@ -269,7 +269,7 @@ works with a complete and annotated history of content changes.
 {: .challenge}
 
 > ## Exercise -- `install` AKA `clone`
-> Clone [https://github.com/repronim/ohbm-training]() locally
+> Clone [https://github.com/repronim/sfn2018-training]() locally
 > > ## Solution
 > > I am sorry if you had to look in here ;-)
 > > ~~~
@@ -293,7 +293,7 @@ works with a complete and annotated history of content changes.
 > > Version should be something which uniquely and unambiguously describes
 > > content.  In Git it would be the SHA1 checksum of the commit you got
 > > ~~~
-> > % git show | HEAD
+> > % git show HEAD
 > > commit 2d992fe19ccd2a1c3eb8267d9e10f6c75f190eaa
 > > Merge: 3a42dd1 012c53f
 > > Author: JB Poline <jbpoline@gmail.com>
