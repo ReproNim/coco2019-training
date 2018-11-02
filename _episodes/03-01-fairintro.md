@@ -13,6 +13,7 @@ objectives:
 - "This module should provide you with the ability to work with your data in a FAIR manner"
 - "Provide researchers with the proper information on FAIR data so that they can be submitted to the specified workflows and executions environments in a reproducible fashion"
 - "Provide an overview of current data standards, such as BIDS, with hands on excercises"
+- "Slides with solutions can be found in the sfn2018-training repository: https://github.com/ReproNim/sfn2018-training/tree/master/FAIR"
 
 keypoints:
 - "There are a number of practical guidelines and best practices for ensuring data supports reproducible research"
@@ -20,4 +21,3 @@ keypoints:
 - "There are a number of tools and standards to assist in making data FAIR."
 ---
 
-Slides with solutions can be found in the sfn2018-training repository: https://github.com/ReproNim/sfn2018-training/tree/master/FAIR
