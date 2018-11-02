@@ -156,7 +156,7 @@ class: center, middle, inverse
 layout: false
 
 - Use [the Neurodocker examples page](https://github.com/kaczmarj/neurodocker/tree/master/examples) for help 
-(search for `miniconda` software) and update the previous command.
+(search for `miniconda` software) and update the previous command
 
 - Add the python part to the end of the Neurodocker command
 
@@ -175,12 +175,12 @@ docker run --rm kaczmarj/neurodocker:master generate docker \
             activate=true > Dockerfile_conda 
 ```
 
-- building a Docker image (note, that we have to specify if our Dockerfile has a different name than "Dockerfile"): 
+- building a Docker image (note, that we have to specify our name of Dockerfile if we don't use the default name, i.e. "Dockerfile"): 
 ```bash
 docker build -t my_fsl_conda -f Dockerfile_conda . 
 ```
-You can notice that creating FSL layers is fast, since Docker already have this layers available in `my_fsl` image.
-If you change the order of installing FSL and Python, Docker will have to start installing everything from beginning.
+You could notice that creating FSL layers is fast, since Docker already have this layers available in `my_fsl` image.
+If you change the order of installing FSL and Python, Docker will have to start installing everything from the beginning.
 
 - checking available Docker images: 
 ```bash
@@ -220,7 +220,7 @@ docker run my_fsl bet
 layout: false
 
 - installing a datalad repository and downloading one T1w file 
-(if you are using the ReproNim VM, you should activate `section2` python environment: `source activate section2`) 
+(if you are using the ReproNim VM, you should activate `section2` python environment)
 ```bash
 mkdir data
 cd data
@@ -229,7 +229,7 @@ datalad get ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
 cd ..
 ```
 
-- mounting a local directory with data and running *bet* on the downloaded file: 
+- mounting a local directory with data and running *bet* on the T1w file: 
 ```bash
 docker run -v ~/data/ds000114:/data my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz sub-01_output
@@ -252,7 +252,7 @@ layout: false
 mkdir output
 ```
 
-- mounting local directories with data and output, and running *bet* on the downloaded file:
+- mounting two local directories, with data and output, and running *bet* on the T1w file:
 ```bash
 docker run -v ~/data/ds000114:/data -v ~/output:/output my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
@@ -285,6 +285,7 @@ layout: false
 #### Solution
 
 - creating a Singularity image:
+
 ```bash
 mkdir ~/my_singularity
 cd ~/my_singularity
@@ -293,11 +294,11 @@ docker run --rm kaczmarj/neurodocker:master generate singularity \
 --pkg-manager apt \
 --install fsl-5.0-core fsl-mni152-templates \
 --add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" > Singularity_fsl 
-
 sudo singularity build my_fsl.simg Singularity_fsl 
 ```
 
 - running `bet` analysis
+
 ```bash
 singularity run ~/my_singularity/fsl.simg bet \
 ~/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz \
