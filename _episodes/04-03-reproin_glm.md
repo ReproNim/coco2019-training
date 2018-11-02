@@ -70,9 +70,14 @@ be structured and implement these concepts in *dataset procedures* that can be
 executed using the [datalad run-procedure] command.
 
 We are going to adopt the YODA principles: a set of simple rules on how to
-structure analysis dataset. Here, the only relevant aspect
+structure analysis dataset(s) to facilitate their reuse and
+reproducibility of the results
+(see [OHBM 2018 YODA
+poster](https://github.com/myyoda/poster/blob/master/ohbm2018.pdf) for
+more information). Here, the only relevant aspects
 is that we want to keep all analysis scripts in the `code/` subdirectory of
-this dataset. We can get a readily configured dataset by running the YODA
+this dataset and later enhance it with full analysis environment
+images. We can get a readily configured dataset by running the YODA
 setup procedure:
 
 > ## Task: Run the `setup_yoda_dataset` procedure
