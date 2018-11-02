@@ -233,9 +233,9 @@ cd ..
 ---
 layout: false
 
-- mounting a local directory with data and running *bet* on the T1w file: 
+- mounting a local directory with data (using read-only option) and running *bet* on the T1w file: 
 ```bash
-docker run -v ~/data/ds000114:/data my_fsl bet \
+docker run -v ~/data/ds000114:/data:ro my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz sub-01_output
 ```
 --
@@ -257,7 +257,7 @@ mkdir output
 
 - mounting two local directories, with data and output, and running *bet* on the T1w file:
 ```bash
-docker run -v ~/data/ds000114:/data -v ~/output:/output my_fsl bet \
+docker run -v ~/data/ds000114:/data:ro -v ~/output:/output my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
 ```
 --
