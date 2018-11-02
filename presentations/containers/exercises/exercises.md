@@ -7,8 +7,8 @@ class: center, middle, inverse
 ---
 layout: false
 
-- #### Exercise 1: Creating Docker images with FSL and Python
-- #### Exercise 2: Running *bet* within the container
+- #### 1: Creating Docker images with FSL and Python
+- #### 2: Running *bet* within the container
 
 ---
 
@@ -16,7 +16,7 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-### Exercise 1: Creating a Docker image with FSL
+### 1: Creating an image with FSL
 ---
 layout: false
 
@@ -100,7 +100,7 @@ layout: false
 ---
 layout: false
 
-### Building a Docker image using Neurodocker
+### Building a Docker image
 
 - creating a new empty directory 
 ```bash
@@ -130,9 +130,7 @@ docker images
 ---
 layout: false
 
-### Exercise 1 with Singularity
-
-#### Building a Singularity image using Neurodocker
+### Building a Singularity image
 
 - creating a Singularity file using Neurodocker:
 ```bash
@@ -153,20 +151,48 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-### Exercise 1a: Adding python 3.6 to the Docker FSL image
+### Exercise 1: Create a Docker image with FSL and conda environment with python 3.7 and numpy library
 ---
 layout: false
 
-Add python 3.6 to your previous image. 
+- Use [the Neurodocker examples page](https://github.com/kaczmarj/neurodocker/tree/master/examples) for help 
+(search for `miniconda` software) and update the previous command
 
-Use [the Neurodocker examples page](https://github.com/kaczmarj/neurodocker/tree/master/examples) for help. Search for `miniconda` software.
+- Add the python part to the end of the Neurodocker command
+
+--
+#### Solution
+
+- creating a Dockerfile_conda using Neurodocker:
+```bash
+docker run --rm kaczmarj/neurodocker:master generate docker \
+--base neurodebian:stretch-non-free \
+--pkg-manager apt \
+--install fsl-5.0-core fsl-mni152-templates \
+--add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" \
+--miniconda create_env=my_env \
+            conda_install='python=3.7 numpy' \
+            activate=true > Dockerfile_conda 
+```
+
+- building a Docker image (note, that we have to specify our name of Dockerfile if we don't use the default name, i.e. "Dockerfile"): 
+```bash
+docker build -t my_fsl_conda -f Dockerfile_conda . 
+```
+You could notice that creating FSL layers is fast, since Docker already have this layers available in `my_fsl` image.
+If you change the order of installing FSL and Python, Docker will have to start installing everything from the beginning.
+
+- checking available Docker images: 
+```bash
+docker images
+```
 
 ---
 name: inverse
 layout: true
 class: center, middle, inverse
 ---
-## Exercise 2: Running *bet* within the container
+## 2: Running *bet* within the container
 ---
 layout: false
 
@@ -193,7 +219,9 @@ docker run my_fsl bet
 ---
 layout: false
 
-- installing a datalad repository and downloading one T1w file
+- installing a datalad repository and downloading one T1w file 
+
+(if you are using the ReproNim VM, you should use `section2` conda environment -- `source activate section2`)
 ```bash
 mkdir data
 cd data
@@ -202,9 +230,12 @@ datalad get ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
 cd ..
 ```
 
-- mounting a local directory with data and running *bet* on the downloaded file: 
+---
+layout: false
+
+- mounting a local directory with data and running *bet* on the T1w file: 
 ```bash
-docker run -v ~/ds000114:/data my_fsl bet \
+docker run -v ~/data/ds000114:/data my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz sub-01_output
 ```
 --
@@ -216,7 +247,6 @@ ls -l
 
 <img src="img/docker3.jpeg" width="95%" />
 
-
 ---
 layout: false
 
@@ -225,9 +255,9 @@ layout: false
 mkdir output
 ```
 
-- mounting local directories with data and output, and running *bet* on the downloaded file:
+- mounting two local directories, with data and output, and running *bet* on the T1w file:
 ```bash
-docker run -v ~/ds000114:/data -v ~/output:/output my_fsl bet \
+docker run -v ~/data/ds000114:/data -v ~/output:/output my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
 ```
 --
@@ -237,23 +267,49 @@ ls -l output
 ```
 --
 
-<img src="img/docker4.jpeg" width="95%" />
+<img src="img/docker4.jpeg" width="90%" />
+
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+### Exercise 2: Running bet analysis with Singularity
 
 ---
 layout: false
 
-### Exercise 2 with Singularity
+- Create a Singularity image with FSL (use neurodocker)
 
-#### Running *bet* in the Singularity container
+- Repeat the bet analysis using the Singularity image 
+(note, that the home directory is automatically mounted, `-B` can be used to add more mounting points) 
 
-- home directory is automatically mounted, so we don't have to specify (`-B` can be used to add more mounting points) 
+--
+#### Solution
+
+- creating a Singularity image:
+
 ```bash
-singularity run images/fsl.simg bet \
-~/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz \
+mkdir ~/my_singularity
+cd ~/my_singularity
+docker run --rm kaczmarj/neurodocker:master generate singularity \
+--base neurodebian:stretch-non-free \
+--pkg-manager apt \
+--install fsl-5.0-core fsl-mni152-templates \
+--add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" > Singularity_fsl 
+sudo singularity build my_fsl.simg Singularity_fsl 
+```
+
+- running `bet` analysis
+
+```bash
+singularity run ~/my_singularity/fsl.simg bet \
+~/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz \
 ~/output/sub-01_output_sing
 ```
 
 - checking the output
+
 ```bash
 ls -l ~/output
 ```
