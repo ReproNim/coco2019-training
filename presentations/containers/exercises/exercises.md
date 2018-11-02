@@ -220,7 +220,7 @@ docker run my_fsl bet
 layout: false
 
 - installing a datalad repository and downloading one T1w file 
-(if you are using the ReproNim VM, you should activate `section2` python environment)
+(if you are using the ReproNim VM, you should use `section2` conda environment)
 ```bash
 mkdir data
 cd data
@@ -241,7 +241,7 @@ ls -l
 ```
 --
 
-<img src="img/docker3.jpeg" width="95%" />
+<img src="img/docker3.jpeg" width="85%" />
 
 
 ---
@@ -264,7 +264,7 @@ ls -l output
 ```
 --
 
-<img src="img/docker4.jpeg" width="95%" />
+<img src="img/docker4.jpeg" width="90%" />
 
 ---
 name: inverse
@@ -306,6 +306,7 @@ singularity run ~/my_singularity/fsl.simg bet \
 ```
 
 - checking the output
+
 ```bash
 ls -l ~/output
 ```
