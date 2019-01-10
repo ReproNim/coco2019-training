@@ -5,50 +5,7 @@ class: center, middle, inverse
 # Container-based environments
 
 ---
-name: inverse
-layout: true
-class: center, middle, inverse
 
-<!---
----
-## Common scenarios in research
-
-???
-- Computational environments are difficult to reproduce.
-  - You are running a neuroimaging study with remote collaborators. Collaborator asks you to share your environment with them. You tell them, "just install python 3 with these 4 libraries and ANTs version 2.3.0." This sounds simple. But I am on Linux, where ANTs builds just fine. My collaborator is on Windows, which ANTs doesn't support. What now?
-  - Another example, you published a paper a few years ago, and a group wants to reproduce it. You can share your data, but how do you share the computational environment you used when writing the paper? It would be very difficult.
-- Environments are mutable and change unexpectedly.
-  - Updating one Python package, for example, might update other packages, without you realizing. This could have unexpected effects on the outputs of your analyses. In a multi-year study, this could be a very big problem.
-
---->
----
-
-layout: false
-
-### <span style="color:purple">Common scenarios in research</span>
-
-- #### Computational environments are difficult to reproduce.
-- #### Computational environments change (unknowingly) during the life of a study.
-
-???
-- Computational environments are difficult to reproduce.
-  - You are running a neuroimaging study with remote collaborators. Collaborator asks you to share your environment with them. You tell them, "just install python 3 with these 4 libraries and ANTs version 2.3.0." This sounds simple. But I am on Linux, where ANTs builds just fine. My collaborator is on Windows, which ANTs doesn't support. What now?
-  - Another example, you published a paper a few years ago, and a group wants to reproduce it. You can share your data, but how do you share the computational environment you used when writing the paper? It would be very difficult.
-- Environments are mutable and change unexpectedly.
-  - Updating one Python package, for example, might update other packages, without you realizing. This could have unexpected effects on the outputs of your analyses. In a multi-year study, this could be a very big problem.
-
-
----
-name: inverse
-layout: true
-class: center, middle, inverse
-
----
-## Containers solve all of these problems!
-
-(and more)
-
----
 name: inverse
 layout: true
 class: center, middle, inverse
@@ -59,6 +16,13 @@ class: center, middle, inverse
 ---
 
 layout: false
+
+
+### <span style="color:purple">Common scenarios in research</span>
+
+- #### Computational environments are difficult to reproduce.
+- #### Computational environments change (unknowingly) during the life of a study.
+---
 
 ### <span style="color:purple">What is a container?</span>
 
