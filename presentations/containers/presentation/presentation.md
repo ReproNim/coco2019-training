@@ -20,13 +20,15 @@ layout: false
 
 ### <span style="color:purple">Common scenarios in research</span>
 
-- #### Computational environments are difficult to reproduce.
-- #### Computational environments change (unknowingly) during the life of a study.
+- #### Science these days rely extensively on software
+- #### Scientist don't have computational background
+- #### Computational environments might be difficult to create (and even harder to reproduce!)
+- #### Software changes (unknowingly) during the life of a study.
 ---
 
 ### <span style="color:purple">What is a container?</span>
 
-#### A container is a "standardized unit of software" that can run anywhere (Docker.com).
+#### A container is a "standardized unit of software" that can run anywhere
 
 ### <span style="color:purple">What do containers provide?</span>
 
