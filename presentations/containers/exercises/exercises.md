@@ -7,8 +7,11 @@ class: center, middle, inverse
 ---
 layout: false
 
-- #### 1: Creating Docker images with FSL and Python
-- #### 2: Running *bet* within the container
+## Goals
+
+1. #### Use Docker command-line interface
+2. #### Create Docker images with FSL and Python
+3. #### Run *bet* within the container
 
 ---
 
@@ -16,7 +19,82 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-### 1: Creating an image with FSL
+### 1. Use Docker command-line interface
+---
+layout: false
+
+- #### Show Docker help
+  ```bash
+  $ docker --help
+  ```
+--
+- #### List Docker images
+  ```bash
+  $ docker images
+  ```
+--
+- #### Pull a Docker image
+  ```bash
+  $ docker pull hello-world
+  ```
+--
+- #### List Docker images
+  ```bash
+  $ docker images
+  ```
+
+```bash
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        9 days ago          1.84kB
+```
+
+---
+layout: false
+
+- #### Run an image
+  ```bash
+  $ docker run hello-world
+  ```
+--
+- #### Run an image interactively
+  ```bash
+  $ docker run -it ubuntu:18.04 bash
+  ```
+--
+- #### Run another image
+  ```bash
+  $ docker run kaczmarj/coco2019
+  ```
+???
+Let's say I made this cool new software I wanted to share with others. I can distribute it in a container, and everyone should be able to run it. I uploaded my Docker image to a repository online. My username is kaczmarj, and project is coco2019.
+
+---
+layout: false
+
+### Cleaning up after yourself
+
+- #### Show all containers
+  ```bash
+  $ docker ps -a
+  ```
+--
+- #### Remove all stopped containers
+  ```bash
+  $ docker container prune
+  ```
+--
+- #### Automatically remove containers after stopping
+  ```bash
+  $ docker run --rm kaczmarj/coco2019
+  ```
+
+---
+
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+### Creating an image with FSL
 ---
 layout: false
 
@@ -31,9 +109,9 @@ layout: false
 
 ---
 layout: false
-  - a more complicated Dockerfile with FSL might look like this 
+  - a more complicated Dockerfile with FSL might look like this
 
-  ```bash
+  ```dockerfile
   FROM neurodebian:stretch-non-free
   ARG DEBIAN_FRONTEND="noninteractive"
 
@@ -77,7 +155,7 @@ layout: false
 &nbsp;
 - generates custom  Dockerfiles and Singularity files for neuroimaging software and minifies existing Docker images
 
-- simplifies writing a new Dockerfile and Singularity files
+- simplifies writing Dockerfiles and Singularity files
 
 - incorporates the best practice for installing software
 
@@ -85,17 +163,16 @@ layout: false
 
 - uses ReproZip for minifying existing Docker images
 
-&nbsp;
+--
 
-  - Creating a Dockerfile that includes FSL from Neurodebian:
+- Creating a Dockerfile that includes FSL from Neurodebian:
 
-  ```bash 
-  docker run --rm kaczmarj/neurodocker:master generate docker \
+  ```bash
+  docker run --rm kaczmarj/neurodocker:0.4.3 generate docker \
   --base neurodebian:stretch-non-free \
   --pkg-manager apt \
   --install fsl-5.0-core fsl-mni152-templates \
   --add-to-entrypoint "source /etc/fsl/5.0/fsl.sh"
-
   ```
 ---
 layout: false
@@ -108,7 +185,7 @@ mkdir my_docker
 cd my_docker
 ```
 
-- creating a Dockerfile using Neurodocker:
+- create a Dockerfile using Neurodocker:
 ```bash
 docker run --rm kaczmarj/neurodocker:master generate docker \
 --base neurodebian:stretch-non-free \
@@ -117,12 +194,12 @@ docker run --rm kaczmarj/neurodocker:master generate docker \
 --add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" > Dockerfile 
 ```
 
-- building a Docker image: 
+- build a Docker image: 
 ```bash
 docker build -t my_fsl . 
 ```
 
-- checking available Docker images: 
+- check available Docker images: 
 ```bash
 docker images
 ```
@@ -155,7 +232,7 @@ class: center, middle, inverse
 ---
 layout: false
 
-- Use [the Neurodocker examples page](https://github.com/kaczmarj/neurodocker/tree/master/examples) for help 
+- Use [the Neurodocker examples page](https://github.com/kaczmarj/neurodocker/tree/master/examples) for help
 (search for `miniconda` software) and update the previous command
 
 - Add the python part to the end of the Neurodocker command
@@ -219,9 +296,8 @@ docker run my_fsl bet
 ---
 layout: false
 
-- installing a datalad repository and downloading one T1w file 
+- installing a datalad repository and downloading one T1w file
 
-(if you are using the ReproNim VM, you should use `section2` conda environment -- `source activate section2`)
 ```bash
 mkdir data
 cd data
@@ -230,12 +306,16 @@ datalad get ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
 cd ..
 ```
 
+If you don't have datalad yet:
+
+Download http://datasets.datalad.org/workshops/nih-2017/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+
 ---
 layout: false
 
-- mounting a local directory with data (using read-only option) and running *bet* on the T1w file: 
+- mount a local directory with data (using read-only option) and running *bet* on the T1w file:
 ```bash
-docker run -v ~/data/ds000114:/data:ro my_fsl bet \
+docker run -v /home/jakub/data:/data:/data:ro my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz sub-01_output
 ```
 --
@@ -257,7 +337,7 @@ mkdir output
 
 - mounting two local directories, with data and output, and running *bet* on the T1w file:
 ```bash
-docker run -v ~/data/ds000114:/data:ro -v ~/output:/output my_fsl bet \
+docker run -v ~/data:/data:ro -v ~/output:/output my_fsl bet \
 /data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
 ```
 --
@@ -281,8 +361,8 @@ layout: false
 
 - Create a Singularity image with FSL (use neurodocker)
 
-- Repeat the bet analysis using the Singularity image 
-(note, that the home directory is automatically mounted, `-B` can be used to add more mounting points) 
+- Repeat the bet analysis using the Singularity image
+(note, that the home directory is automatically mounted, `-B` can be used to add more mounting points)
 
 --
 #### Solution
@@ -290,20 +370,20 @@ layout: false
 - creating a Singularity image:
 
 ```bash
-mkdir ~/my_singularity
-cd ~/my_singularity
-docker run --rm kaczmarj/neurodocker:master generate singularity \
+$ mkdir ~/my_singularity
+$ cd ~/my_singularity
+$ docker run --rm kaczmarj/neurodocker:master generate singularity \
 --base neurodebian:stretch-non-free \
 --pkg-manager apt \
 --install fsl-5.0-core fsl-mni152-templates \
 --add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" > Singularity_fsl 
-sudo singularity build my_fsl.simg Singularity_fsl 
+$ sudo singularity build my_fsl.simg Singularity_fsl 
 ```
 
 - running `bet` analysis
 
 ```bash
-singularity run ~/my_singularity/fsl.simg bet \
+$ singularity run ~/my_singularity/fsl.simg bet \
 ~/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz \
 ~/output/sub-01_output_sing
 ```
@@ -352,17 +432,17 @@ docker ps -a
 docker rm <container id>
 ```
 
-- removing all containers that stopped running 
+- removing all containers that stopped running
 ```bash
 docker rm $(docker ps -a -q)
 ```
 
-- **use `--rm` option to remove the container after it exits**, e.g.: 
+- **use `--rm` option to remove the container after it exits**, e.g.:
 ```
 docker run --rm  fsl ls
 ```
 --
-&nbsp; 
+&nbsp;
 
 - checking a list of running Singularity images
 ```bash
