@@ -23,7 +23,7 @@ layout: false
 - #### Science these days rely extensively on software
 - #### Scientist don't have computational background
 - #### Computational environments might be difficult to create (and even harder to reproduce!)
-- #### Software changes (unknowingly) during the life of a study.
+- #### Software changes (unknowingly) during the life of a study
 ---
 
 ### <span style="color:purple">What is a container?</span>
