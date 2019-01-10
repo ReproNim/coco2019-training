@@ -2,12 +2,55 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# Container based environments
+# Container-based environments
 
 ---
 name: inverse
 layout: true
 class: center, middle, inverse
+
+---
+## Common scenarios in research
+
+???
+- Computational environments are difficult to reproduce.
+  - You are running a neuroimaging study with remote collaborators. Collaborator asks you to share your environment with them. You tell them, "just install python 3 with these 4 libraries and ANTs version 2.3.0." This sounds simple. But I am on Linux, where ANTs builds just fine. My collaborator is on Windows, which ANTs doesn't support. What now?
+  - Another example, you published a paper a few years ago, and a group wants to reproduce it. You can share your data, but how do you share the computational environment you used when writing the paper? It would be very difficult.
+- Environments are mutable and change unexpectedly.
+  - Updating one Python package, for example, might update other packages, without you realizing. This could have unexpected effects on the outputs of your analyses. In a multi-year study, this could be a very big problem.
+
+---
+
+layout: false
+
+### <span style="color:purple">Common scenarios in research</span>
+
+- #### Computational environments are difficult to reproduce.
+- #### Computational environments change (unknowingly) during the life of a study.
+
+???
+- Computational environments are difficult to reproduce.
+  - You are running a neuroimaging study with remote collaborators. Collaborator asks you to share your environment with them. You tell them, "just install python 3 with these 4 libraries and ANTs version 2.3.0." This sounds simple. But I am on Linux, where ANTs builds just fine. My collaborator is on Windows, which ANTs doesn't support. What now?
+  - Another example, you published a paper a few years ago, and a group wants to reproduce it. You can share your data, but how do you share the computational environment you used when writing the paper? It would be very difficult.
+- Environments are mutable and change unexpectedly.
+  - Updating one Python package, for example, might update other packages, without you realizing. This could have unexpected effects on the outputs of your analyses. In a multi-year study, this could be a very big problem.
+
+
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+## Containers solve all of these problems!
+
+(and more)
+
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+
 ---
 ## Introduction
 
@@ -15,16 +58,18 @@ class: center, middle, inverse
 
 layout: false
 
-### <span style="color:purple">What are the container technologies</span>
+### <span style="color:purple">What is a container?</span>
 
+#### A container is a "standardized unit of software" that can run anywhere (Docker.com).
 
-&nbsp;
+### <span style="color:purple">What do containers provide?</span>
 
-- #### Isolate the computing environments
-
-&nbsp;
-
-- #### Allow to encapsulate environments in a self-contained unit that can run anywhere
+- #### Standard method of creating and sharing computational environments
+- #### Isolation of computational environments
+- #### Easy interoperability
+  - Containers can be run on Linux, macOS, and Windows
+- #### Immutability of environments
+  - You cannot permanently alter a container unintentionally
 
 ---
 
@@ -207,7 +252,7 @@ There is no one solution that always works, your choice should depend on:
 - **Docker:**
   - leading software container platform
   - an open-source project
-  - **it runs now on Mac OS X and Windows Pro** (you don't have to install VM!)
+  - **it runs on Linux, macOS, and Windows Pro** (you don't have to install VM!)
 --
 
   - **can escalate privileges - not supported by HPC centers admins**
@@ -219,8 +264,5 @@ There is no one solution that always works, your choice should depend on:
   - **supports existing and traditional HPC resources**
   - a user inside a Singularity container is the same user as outside the container
 (so you can be a root only if you were root on the host system)
-  - VM needed on OSX and Windows
+  - VM needed on macOS and Windows
   - a Singularity image can be created from a Docker image
-
-
-
