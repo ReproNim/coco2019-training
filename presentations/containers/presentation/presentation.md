@@ -9,7 +9,7 @@ name: inverse
 layout: true
 class: center, middle, inverse
 
-<!--
+<!---
 ---
 ## Common scenarios in research
 
