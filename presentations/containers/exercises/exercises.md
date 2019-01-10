@@ -275,7 +275,7 @@ layout: false
 
 - running container
 ```bash
-docker run my_fsl
+docker run --rm my_fsl
 ```
 --
 
@@ -286,7 +286,7 @@ layout: false
 
 - running command within the container
 ```bash
-docker run my_fsl bet
+docker run --rm my_fsl bet
 ```
 --
 
@@ -306,17 +306,24 @@ datalad get ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
 cd ..
 ```
 
-If you don't have datalad yet:
+- if you don't have datalad yet, you can download
 
-Download http://datasets.datalad.org/workshops/nih-2017/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+http://datasets.datalad.org/workshops/nih-2017/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+
+```bash
+mkdir data
+cd data
+wget http://datasets.datalad.org/workshops/nih-2017/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+cd ..
+```
 
 ---
 layout: false
 
 - mount a local directory with data (using read-only option) and running *bet* on the T1w file:
 ```bash
-docker run -v /home/jakub/data:/data:/data:ro my_fsl bet \
-/data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz sub-01_output
+docker run -v /your/path/to/data:/data:/data:ro my_fsl bet \
+/data/sub-01_ses-test_T1w.nii.gz sub-01_output
 ```
 --
 - checking the output
@@ -337,8 +344,8 @@ mkdir output
 
 - mounting two local directories, with data and output, and running *bet* on the T1w file:
 ```bash
-docker run -v ~/data:/data:ro -v ~/output:/output my_fsl bet \
-/data/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
+docker run -v /your/path/to/data:/data:ro -v ~/output:/output my_fsl bet \
+/data/sub-01_ses-test_T1w.nii.gz /output/sub-01_output
 ```
 --
 - checking the output
@@ -384,8 +391,8 @@ $ sudo singularity build my_fsl.simg Singularity_fsl 
 
 ```bash
 $ singularity run ~/my_singularity/fsl.simg bet \
-~/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz \
-~/output/sub-01_output_sing
+/your/path/to/data/sub-01_ses-test_T1w.nii.gz \
+/your/path/to/output/sub-01_output_sing
 ```
 
 - checking the output
@@ -401,7 +408,7 @@ layout: false
 
 - running an interactive session:
 ```bash
-docker run -it my_fsl
+docker run -it --rm my_fsl
 ```
 --
 
