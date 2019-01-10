@@ -20,7 +20,7 @@ class: center, middle, inverse
 - Environments are mutable and change unexpectedly.
   - Updating one Python package, for example, might update other packages, without you realizing. This could have unexpected effects on the outputs of your analyses. In a multi-year study, this could be a very big problem.
 
--->
+--->
 ---
 
 layout: false
