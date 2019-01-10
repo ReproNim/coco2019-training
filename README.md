@@ -36,5 +36,4 @@
 
 # The Presentations
 
-All tutorials and slides are available from the http://repronim.org/sfn2018-training
-generated from sources within `gh-pages` branch of this repository.
+All tutorials and slides are available from the http://www.repronim.org/coco2019-training/ generated from sources within `gh-pages` branch of this repository.
