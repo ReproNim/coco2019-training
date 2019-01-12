@@ -1,6 +1,6 @@
 class: center middle
 
-# Nipype in the Cloud
+# Nipype and plugins
 
 #### CoCo 2019
 
@@ -21,8 +21,8 @@ cd  # work in /home directory
 git config --global user.name "nipyper"
 git config --global user.name "pyper@ni"
 datalad install ///openneuro/ds000001  # make dataset paths
-datalad get ds000001/sub-0[1-5]/*/*T1w*  # fetch first 5 T1s
-curl -O 
+datalad get ds000001/sub-*/*/*T1w*  # fetch all T1s
+curl -qO https://raw.githubusercontent.com/mgxd/coco2019-training/gh-pages/presentations/nipype-cloud/sample_workflow.py
 ```
 
 ---
