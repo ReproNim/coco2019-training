@@ -82,6 +82,7 @@ as an environment variable, `$PAGER`, two common examples of which are
 - <KBD>SPACE</KBD>, <kbd>PgDn</kbd>, <kbd>f</kbd> - page down
 - <kbd>PgUp</kbd>, <kbd>b</kbd> - page up
 - <kbd>/</kbd> - search, <kbd>n</kbd> - next instance of search term
+- <kbd>?</kbd> - backwards search, prev instance of search term
 - <kbd>q</kbd> - exit
 
 
