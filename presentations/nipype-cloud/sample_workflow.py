@@ -35,7 +35,11 @@ def main():
     args = parser.parse_args()
 
     wf = init_example_wf()
-    wf.run(plugin=args.plugin, plugin_args=args.plugin_args)
+
+    if not args.plugin_args:
+        wf.run(plugin=args.plugin)
+    else:
+        wf.run(plugin=args.plugin, plugin_args=eval(args.plugin_args))
 
     print("\nWorkflow duration:", time.time() - time0)
     return wf
