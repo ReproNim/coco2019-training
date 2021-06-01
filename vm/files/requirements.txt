@@ -152,7 +152,7 @@ tornado
 tqdm
 traitlets
 traits
-urllib3==1.22
+urllib3==1.26.5
 wcwidth
 webencodings
 Werkzeug
